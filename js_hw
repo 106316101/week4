@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>My form</title>
+</head>
+<body style="background-color:lightblue;">
+<h1 style="color:MidnightBlue;text-align:center;font-size:150%;font-family:Microsoft JhengHei;">HEMATOLOGY/ONCOLOGY PATIENT REFERRAL FORM</h1>
+<label for="patientif" style="color:black;font-size:120%;font-family:Microsoft JhengHei;"><strong>PATIENT INFORMATION</strong></label>
+<form id="orderForm1"action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="form1" >
+     <label for="pname" style="color:MidnightBlue;font-size:100%;font-family:Microsoft JhengHei;"><strong>NAME</strong></label><br/>
+      <input type="text" id="pname" name="Name" value=""><br/>
+    <br/>
+     <label for="pid" style="color:MidnightBlue;font-size:100%;font-family:Microsoft JhengHei;"><strong>PERSON ID</strong></label><br/>
+     <input type="text" id="pid" name="Person ID" value=""><br/>
+    <br/>
+    <label for="gender" style="color:MidnightBlue;font-size:100%;font-family:Microsoft JhengHei;"><strong>GENDER</strong></label><br/>
+    <input type="radio" id="gender" name="Gender" value="male"> Male<br/>
+  <input type="radio"  name="Gender" value="female"> Female<br/>
+  <input type="radio"  name="Gender" value="other"> Other<br/>
+    <br/>
+  <label for="pbirth" style="color:MidnightBlue;font-size:100%;font-family:Microsoft JhengHei;"><strong>PATIENT BIRTHDAY</strong></label><br/>
+   <br/>
+     <input type="date"  id="pbirth" name="Patient birthday" value=""><br/>
+     <br/>
+    <label for="Pphone" style="color:MidnightBlue;font-size:100%;font-family:Microsoft JhengHei;"><strong>PATIENT PHONE(Cell)</strong></label><br/>
+    <input type="text" id="Pphone" name="Patient Phone" value=""><br/>
+    <br/>
+    <input type="submit" value="提交">
+    <button  type="button"onclick="checkout()">檢查</button>
+    <button  type="button"onclick="work3()">作業3</button>
+    <button  type="button"onclick="work4()">作業4</button>
+    <script>
+        function checkout()
+        {
+            if (document.getElementById("pname").value == " ") {
+                alert("尚未填入姓名!");
+                //return false;
+            }
+            if (document.getElementById("Pphone").value == " ") {
+                alert("尚未填入電話!");
+                //return false;
+            }
+        }
+        var patient = { "name": "Chalmers", "telephone": "12345678", "gender": "male", "birthDate": "1974-12-25" };
+        function work3()
+        {
+            document.getElementById("pname").value = (patient.name);
+            document.getElementById("Pphone").value = (patient.telephone);
+            document.getElementById("gender").value = (patient.gender);
+            document.getElementById("pbirth").value = (patient.birthDate);
+        }
+        function work4()
+        {
+            var num1 = document.getElementById("pname").value;
+            alert(num1);
+        }
+    </script>
+    </form>
+</body>
+</html>
