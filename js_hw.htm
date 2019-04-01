@@ -3,51 +3,53 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>My form</title>    
     <script>
-        function checkout()
-        {
-            if( document.form1.Name.value == "" )
-            {
-                alert( "請輸入姓名!" );
-                document.form1.Name.focus() ;
+        function checkout() {
+            if (document.form1.Name.value == "") {
+                alert("請輸入姓名!");
+                document.form1.Name.focus();
                 return false;
             }
-            if(isNaN(document.form1.PersonID.value))
-            {
-                alert( "請輸入身分證!" );
-                document.form1.PersonID.focus() ;
+            if (document.form1.PersonID.value == "") {
+                alert("請輸入身分證!");
+            }
+            else {
+                document.form1.PersonID.focus();
+            }
+            if (isNaN(document.form1.PersonID.value)) {
+                alert("請輸入身分證!");
+                document.form1.PersonID.focus();
                 return false;
             }
-            if( document.form1.Gender.value == "" )
-            {
-                alert( "請選擇性別!" );
-                //document.form1.Gender.focus() ;
+            if (document.form1.Gender.value == "") {
+                alert("請選擇性別!");
                 return false;
             }
-            if (document.form1.Patientbirthday.value == "") 
-            {
-              alert( "請選擇出生年月日!" );
-        } 
-        else 
-        {
-             document.form1.Patientbirthday.focus() ;
-        }
-        if(isNaN(document.form1.PatientPhone.value))
-        {
-            alert( "請填入電話!" );
-            document.form1.PatientPhone.focus() ;
-            return false;
-        }
+            if (document.form1.Patientbirthday.value == "") {
+                alert("請選擇出生年月日!");
+            }
+            else {
+                document.form1.Patientbirthday.focus();
+            }
+            if (document.form1.PatientPhone.value == "") {
+                alert("請填入電話!");
+            }
+            else {
+                document.form1.PatientPhone.focus();
+            }
+            if (isNaN(document.form1.PatientPhone.value)) {
+                alert("請填入電話!");
+                document.form1.PatientPhone.focus();
+                return false;
+            }
         }
         var patient = { "name": "Chalmers", "telephone": "12345678", "gender": "male", "birthDate": "1974-12-25" };
-        function work3()
-        {
+        function work3() {
             document.getElementById("pname").value = (patient.name);
             document.getElementById("Pphone").value = (patient.telephone);
             document.getElementById("gender").value = (patient.gender);
             document.getElementById("pbirth").value = (patient.birthDate);
         }
-        function work4()
-        {
+        function work4() {
             var num1 = document.getElementById("pname").value;
             alert(num1);
         }
