@@ -2,7 +2,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>My form</title>
+<title>My form</title>    
+    <script>
+        function checkout()
+        {
+            if( document.form1.Name.value == "" )
+            {
+                alert( "請輸入姓名!" );
+                document.form1.Name.focus() ;
+                return false;
+            }
+            if( document.form1.PersonID.value == "" )
+            {
+                alert( "請輸入身分證!" );
+                document.form1.PersonID.focus() ;
+                return false;
+            }
+            if( document.form1.Gender.value == "" )
+            {
+                alert( "請選擇性別!" );
+                document.form1.Gender.focus() ;
+                return false;
+            }
+            if (isNaN(document.form1.Patientbirthday.value)) 
+            {
+              document.form1.Patientbirthday.focus() ;
+        } 
+        else 
+        {
+              alert( "請選擇出生年月日!" );
+        }
+        if( document.form1.PatientPhone.value == "" )
+        {
+            alert( "請填入電話!" );
+            document.form1.PatientPhone.focus() ;
+            return false;
+        }
+        }
+        var patient = { "name": "Chalmers", "telephone": "12345678", "gender": "male", "birthDate": "1974-12-25" };
+        function work3()
+        {
+            document.getElementById("pname").value = (patient.name);
+            document.getElementById("Pphone").value = (patient.telephone);
+            document.getElementById("gender").value = (patient.gender);
+            document.getElementById("pbirth").value = (patient.birthDate);
+        }
+        function work4()
+        {
+            var num1 = document.getElementById("pname").value;
+            alert(num1);
+        }
+    </script>
 </head>
 <body style="background-color:lightblue;">
 <h1 style="color:MidnightBlue;text-align:center;font-size:150%;font-family:Microsoft JhengHei;">HEMATOLOGY/ONCOLOGY PATIENT REFERRAL FORM</h1>
@@ -30,56 +80,6 @@
     <button  type="button"onclick="checkout()">檢查</button>
     <button  type="button"onclick="work3()">作業3</button>
     <button  type="button"onclick="work4()">作業4</button>
-    <script>
-        function checkout()
-        {
-            if( document.form1.Name.value == "" )
-            {
-               alert( "請輸入姓名!" );
-               document.form1.Name.focus() ;
-               return false;
-            }
-             if( document.form1.Person ID.value == "" )
-            {
-               alert( "請輸入身分證!" );
-               document.form1.Person ID.focus() ;
-               return false;
-            }
-             if( document.form1.Gender.value == "" )
-            {
-               alert( "請選擇性別!" );
-               document.form1.Gender.focus() ;
-               return false;
-            }
-             if (isNaN(document.form1.Patient birthday.value)) 
-             {
-               document.form1.Patient birthday.focus() ;
-             } 
-             else 
-             {
-              alert( "請選擇出生年月日!" );
-             }
-             if( document.form1.Patient Phone.value == "" )
-            {
-               alert( "請填入電話!" );
-               document.form1.Patient Phone.focus() ;
-               return false;
-            }
-        }
-        var patient = { "name": "Chalmers", "telephone": "12345678", "gender": "male", "birthDate": "1974-12-25" };
-        function work3()
-        {
-            document.getElementById("pname").value = (patient.name);
-            document.getElementById("Pphone").value = (patient.telephone);
-            document.getElementById("gender").value = (patient.gender);
-            document.getElementById("pbirth").value = (patient.birthDate);
-        }
-        function work4()
-        {
-            var num1 = document.getElementById("pname").value;
-            alert(num1);
-        }
-    </script>
     </form>
 </body>
 </html>
