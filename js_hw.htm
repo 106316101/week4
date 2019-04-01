@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>My form</title>    
@@ -26,11 +25,11 @@
             }
             if (isNaN(document.form1.Patientbirthday.value)) 
             {
-              document.form1.Patientbirthday.focus() ;
+              alert( "請選擇出生年月日!" );
         } 
         else 
         {
-              alert( "請選擇出生年月日!" );
+             document.form1.Patientbirthday.focus() ;
         }
         if( document.form1.PatientPhone.value == "" )
         {
@@ -57,7 +56,7 @@
 <body style="background-color:lightblue;">
 <h1 style="color:MidnightBlue;text-align:center;font-size:150%;font-family:Microsoft JhengHei;">HEMATOLOGY/ONCOLOGY PATIENT REFERRAL FORM</h1>
 <label for="patientif" style="color:black;font-size:120%;font-family:Microsoft JhengHei;"><strong>PATIENT INFORMATION</strong></label>
-<form id="orderForm1"action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="form1" >
+<form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="form1" >
      <label for="pname" style="color:MidnightBlue;font-size:100%;font-family:Microsoft JhengHei;"><strong>NAME</strong></label><br/>
       <input type="text" id="pname" name="Name" value=""><br/>
     <br/>
